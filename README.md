@@ -1,14 +1,14 @@
-Generic MediaTek MT6582 device.
+Generic MediaTek MT8127 device.
 ==============
 
 Basic   | Spec Sheet
 -------:|:-------------------------
-CPU     | 1.3GHz Quad-Core MT6582
-GPU     | Mali-400MP
+CPU     | 1.3GHz Quad-Core MT8127
+GPU     | Mali-450MP
 Memory  | 1GB RAM
-Shipped Android Version | 4.2.2 - 4.4.2
-Storage | 8GB (varies)
-Display | 6.0" 1280 x 720 px (varies)
+Shipped Android Version | 5.0
+Storage | 32GB
+Display | 10.1" 1280 x 800 px
 Camera  | 8MPx, LED Flash
 
 This branch is for building CyanogenMod 12.1 (or CM-12.1 based) ROMS.
@@ -16,27 +16,17 @@ This branch is for building CyanogenMod 12.1 (or CM-12.1 based) ROMS.
 # Build
 
 * Working
-  * Dual SIM
-  * Wifi
-  * Bluetooth
-  * Audio
-  * Sensors
-  * Camera (photo and video recording)
-  * GPS
-  * NFC (removed)
-  * OTG
-  * Tethering (Wifi, Bluetooth and USB)
-  * FM Radio (removed)
+  ?
 
 * Compilation
 
-        # repo init -u git://github.com/rohantaneja/android.git -b cm-12.1
+        # repo init -u git://github.com/neporood/android.git -b cm-12.1
         
         # repo sync
         
         # source build/envsetup.sh
         
-        # brunch cm_mt6582-userdebug
+        # brunch cm_mt8127-userdebug
 
 # MTK
 
