@@ -1,16 +1,6 @@
 mkdir /data/misc/sensors 0664 system system
 
-service msensord /system/bin/msensord
-    user system
-    group system
-    oneshot
-
-service akmd8963 /system/bin/akmd8963
-    disabled
-    user system
-    group system
-
-
+on post-fs-data
 
 on post-fs
 #
@@ -78,5 +68,4 @@ service conn_launcher /system/bin/6620_launcher -p /system/etc/firmware/
 #
 # Connectivity related services (End)
 #
-
 

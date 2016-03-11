@@ -1,4 +1,10 @@
 on post-fs
+
+    # trustzone related interface
+    mknod /dev/trustzone c 197 0;
+    chmod 0666 /dev/trustzone
+    chown root media /dev/trustzone
+    
 #
 # Connectivity related modules and character device nodes (Begin)
 #
