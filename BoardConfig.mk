@@ -36,7 +36,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 TARGET_PREBUILT_KERNEL := device/mediatek/mt8127/kernel
 BOARD_CUSTOM_BOOTIMG_MK := device/mediatek/mt8127/bootimg.mk
-BOARD_MKBOOTIMG_ARGS := --board 1454406196
+BOARD_MKBOOTIMG_ARGS := --base 0x80000000 --pagesize 2048 --kernel_offset 0x00008000 --ramdisk_offset 0x04000000 --second_offset 0x00f00000 --tags_offset 0x00000100 --board 1454406196
 BOARD_CUSTOM_BOOTIMG := true
 
 TARGET_KMODULES := true
@@ -92,7 +92,7 @@ TARGET_RECOVERY_FSTAB := device/mediatek/mt8127/rootdir/recovery.fstab
 BOARD_HAS_NO_SELECT_BUTTON := true
 
 # TWRP
-#RECOVERY_VARIANT=twrp
+#RECOVERY_VARIANT := twrp
 DEVICE_RESOLUTION := 1280x800
 BOARD_HAS_LARGE_FILESYSTEM := true
 TW_NO_USB_STORAGE := true
