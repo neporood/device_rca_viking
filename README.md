@@ -16,11 +16,11 @@ This branch is for building CyanogenMod 12.1 (or CM-12.1 based) ROMS.
 # Build
 
 * Working
-  ?
+  Haven't compiled yet, will update soon...
 
 * Compilation
 
-        # repo init -u git://github.com/neporood/android.git -b cm-12.1
+        # repo init -u git://github.com/temasekMTK/android.git -b cm-12.1
         
         # repo sync
         
