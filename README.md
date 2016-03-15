@@ -16,7 +16,7 @@ This branch is for building CyanogenMod 12.1 (or CM-12.1 based) ROMS.
 # Build
 
 * Working
-  Haven't compiled yet, will update soon...
+   (In progress)
 
 * Compilation
 
