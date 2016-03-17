@@ -137,8 +137,8 @@ PRODUCT_PACKAGES += \
     libmtkplayer
 
 # Camera
-PRODUCT_PACKAGES += \
-    Snap
+# PRODUCT_PACKAGES += \
+#    Snap
 	
 # Set default player to AwesomePlayer
 # PRODUCT_PROPERTY_OVERRIDES += \
