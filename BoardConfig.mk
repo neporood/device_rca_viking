@@ -1,5 +1,5 @@
 # inherit from the proprietary version
--include vendor/mediatek/viking/BoardConfigVendor.mk
+-include vendor/mediatek/mt8127/BoardConfigVendor.mk
 
 # GPS
 TARGET_SPECIFIC_HEADER_PATH := device/mediatek/viking/include
