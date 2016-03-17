@@ -1,4 +1,4 @@
-Generic MediaTek MT8127 device.
+RCA Viking Pro Tablet (MediaTek MT8127)
 ==============
 
 Basic   | Spec Sheet
