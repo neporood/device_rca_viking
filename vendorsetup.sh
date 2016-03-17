@@ -21,3 +21,5 @@
 # function: add_lunch_combo generic-eng
 
 add_lunch_combo cm_viking
+add_lunch_combo cm_viking-eng
+add_lunch_combo cm_viking-userdebug
