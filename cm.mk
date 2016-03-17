@@ -7,7 +7,7 @@ PRODUCT_RELEASE_NAME := VikingPro
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/mediatek/mt8127/device_mt8127.mk)
+$(call inherit-product, device/mediatek/viking/device_mt8127.mk)
 
 # Custom unofficial build tag
 TARGET_UNOFFICIAL_BUILD_ID := nepo

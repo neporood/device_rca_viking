@@ -1,5 +1,5 @@
 #
-# system.prop for rohan build
+# system.prop for nepo build
 #
 
 rild.libpath=/system/lib/mtk-ril.so
@@ -36,26 +36,6 @@ persist.radio.fd.r8.counter=15
 persist.radio.fd.off.r8.counter=5
 
 fmradio.driver.enable=1
-
-mux.debuglog.enable=0
-
-ril.specific.sm_cause=0
-ril.external.md=0
-ril.current.share_modem=2
-ril.first.md=1
-ril.flightmode.poweroffMD=1
-ril.telephony.mode=0
-ril.radiooff.poweroffMD=0
-ril.active.md=0
-ro.telephony.sim.count=2
-
-persist.radio.default.sim=0
-persist.radio.multisim.config=dsds
-persist.md.perm.checked=to_upgrade
-persist.gemini.sim_num=2
-
-ro.telephony.ril_class=MediaTekRIL
-ro.telephony.ril.config=fakeiccid
 
 # USB MTP WHQL
 ro.sys.usb.mtp.whql.enable=0
