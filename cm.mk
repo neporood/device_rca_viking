@@ -13,7 +13,7 @@ $(call inherit-product, device/mediatek/viking/device_viking.mk)
 TARGET_UNOFFICIAL_BUILD_ID := VikingPro
  
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := mt8127
+PRODUCT_DEVICE := viking
 PRODUCT_NAME := cm_viking
 PRODUCT_BRAND := RCA
 PRODUCT_MODEL := RCT6303W87DK
