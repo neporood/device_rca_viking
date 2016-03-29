@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+make clean
+
+. build/envsetup.sh 
+
+lunch cm_mt8127-eng
+
+mka recoveryimage
