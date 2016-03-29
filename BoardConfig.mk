@@ -2,7 +2,7 @@
 -include vendor/mediatek/mt8127/BoardConfigVendor.mk
 
 # GPS
-TARGET_SPECIFIC_HEADER_PATH := device/mediatek/viking/include
+TARGET_SPECIFIC_HEADER_PATH := device/mediatek/mt8127/include
 
 # Platform
 TARGET_BOARD_PLATFORM := mt8127
@@ -15,6 +15,7 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
 TARGET_CPU_VARIANT := cortex-a7
+ARCH_ARM_HAVE_NEON := true
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := mt8127
@@ -28,25 +29,26 @@ BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
 
 # make_ext4fs requires numbers in dec format
+# set works for viking & maven
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2684354560
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 27561820160
 BOARD_CACHEIMAGE_PARTITION_SIZE := 671088640
-BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_FLASH_BLOCK_SIZE := 512
-TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
+BOARD_FLASH_BLOCK_SIZE := 131072
 
-TARGET_PREBUILT_KERNEL := device/mediatek/viking/kernel
-BOARD_CUSTOM_BOOTIMG_MK := device/mediatek/viking/bootimg.mk
-# OEM Uses non-standard offsets
-BOARD_MKBOOTIMG_ARGS := --base 0x80000000 --pagesize 2048 --kernel_offset 0x00008000 --ramdisk_offset 0x04000000 --second_offset 0x00f00000 --tags_offset 0x00000100 --board 1454406196
+TARGET_PREBUILT_KERNEL := device/mediatek/mt8127/kernel
+BOARD_CUSTOM_BOOTIMG_MK := device/mediatek/mt8127/bootimg.mk
+BOARD_MKBOOTIMG_ARGS := --base 0x80000000 --pagesize 2048 --kernel_offset 0x00008000 --ramdisk_offset 0x04000000 --second_offset 0x00f00000 --tags_offset 0x00000100 --board 1446801893 # New Test...
+# viking v12 board = 1454406196
+# viking v9 board = 1428500862
+# maven v9 board = 1429947554
+# accent board = 1444979478
 BOARD_CUSTOM_BOOTIMG := true
 
 TARGET_KMODULES := true
 
-# Assert
+# Assert for maven
 TARGET_OTA_ASSERT_DEVICE := RCT6303W87DK
 
 COMMON_GLOBAL_CFLAGS += -DDISABLE_HW_ID_MATCH_CHECK
@@ -56,7 +58,7 @@ TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 TARGET_CPU_MEMCPY_OPT_DISABLE := true
 
 # EGL
-BOARD_EGL_CFG := device/mediatek/viking/configs/egl.cfg
+BOARD_EGL_CFG := device/mediatek/mt8127/configs/egl.cfg
 USE_OPENGL_RENDERER := true
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
 
@@ -70,7 +72,7 @@ COMMON_GLOBAL_CPPFLAGS += -DMTK_HARDWARE
 ADDITIONAL_DEFAULT_PROPERTIES += ro.mount.fs=EXT4
 
 # RIL
-# BOARD_RIL_CLASS := ../../../device/mediatek/viking/ril/
+BOARD_RIL_CLASS := ../../../device/mediatek/mt8127/ril/
 
 BOARD_CONNECTIVITY_VENDOR := MediaTek
 BOARD_CONNECTIVITY_MODULE := conn_soc
@@ -90,31 +92,54 @@ WIFI_DRIVER_FW_PATH_P2P:=P2P
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_MTK := true
 BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/mediatek/viking/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/mediatek/mt8127/bluetooth
 
 # CWM
-TARGET_RECOVERY_FSTAB := device/mediatek/viking/rootdir/recovery.fstab
+TARGET_RECOVERY_FSTAB := device/mediatek/mt8127/rootdir/recovery.fstab
 BOARD_HAS_NO_SELECT_BUTTON := true
 
 # TWRP
 #RECOVERY_VARIANT := twrp
-DEVICE_RESOLUTION := 1280x800
-BOARD_HAS_LARGE_FILESYSTEM := true
+#DEVICE_RESOLUTION := 1280X800
+TW_THEME := portrait_hdpi
+TWRP_NEW_THEME := false
+RECOVERY_SDCARD_ON_DATA := true
+BOARD_HAS_NO_REAL_SDCARD := true
+#TW_NO_REBOOT_BOOTLOADER := true
+TW_NO_REBOOT_RECOVERY := true
 TW_NO_USB_STORAGE := true
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
-TW_NO_REBOOT_BOOTLOADER := true
+TW_EXCLUDE_SUPERSU := true
+TW_EXCLUDE_MTP := true
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+#TW_HAS_NO_BOOT_PARTITION := true
+TW_ALWAYS_RMRF := true
+#TW_NEVER_UNMOUNT_SYSTEM := true
+TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
+#TARGET_RECOVERY_OVERSCAN_PERCENT := 18
+#TW_IGNORE_MAJOR_AXIS_0 := 300
+#RECOVERY_TOUCHSCREEN_FLIP_Y := true
+RECOVERY_TOUCHSCREEN_FLIP_X := true
+RECOVERY_TOUCHSCREEN_SWAP_XY := true
+#TW_X_OFFSET := 100
+#TW_Y_OFFSET := 25
+#BOARD_HAS_FLIPPED_SCREEN := true
+TW_NO_SCREEN_TIMEOUT := true
+BOARD_HAS_LARGE_FILESYSTEM := false
+RECOVERY_GRAPHICS_FORCE_USE_LINELENGTH := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
-TW_MAX_BRIGHTNESS := 255
+TW_MAX_BRIGHTNESS := 200
 TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone1/temp
-TW_INTERNAL_STORAGE_PATH := "/emmc"
-TW_INTERNAL_STORAGE_MOUNT_POINT := "emmc"
-TW_EXTERNAL_STORAGE_PATH := "/sdcard"
-TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
+TW_CUSTOM_BATTERY_PATH := /sys/class/power_supply/battery
+#PRODUCT_COPY_FILES += device/mediatek/mt8127/rootdir/twrp.fstab:recovery/root/etc/twrp.fstab
+#TW_INTERNAL_STORAGE_PATH := "/emmc"
+#TW_INTERNAL_STORAGE_MOUNT_POINT := "emmc"
+#TW_EXTERNAL_STORAGE_PATH := "/storage/sdcard1"
+#TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard1"
 
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/mt_usb/musb-hdrc.0.auto/gadget/lun0/file"
 
 BOARD_SEPOLICY_DIRS := \
-       device/mediatek/viking/sepolicy
+       device/mediatek/mt8127/sepolicy
 
 BOARD_SEPOLICY_UNION := \
        device.te \
