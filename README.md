@@ -11,12 +11,13 @@ Storage | 32GB
 Display | 10.1" 1280 x 800 px
 Camera  | 8MPx, LED Flash
 
-This branch is for building CyanogenMod 12.1 (or CM-12.1 based) ROMS.
+This branch is for building TWRP 3.0 and hopefully soon CyanogenMod 12.1 (or CM-12.1 based) ROMS.
 
 # Build
 
 * Working
-   (In progress)
+
+  TWRP 3.0 (More of Less)
 
 * Compilation
 
