@@ -39,7 +39,8 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 TARGET_PREBUILT_KERNEL := device/mediatek/mt8127/kernel
 BOARD_CUSTOM_BOOTIMG_MK := device/mediatek/mt8127/bootimg.mk
-BOARD_MKBOOTIMG_ARGS := --base 0x80000000 --pagesize 2048 --kernel_offset 0x00008000 --ramdisk_offset 0x04000000 --second_offset 0x00f00000 --tags_offset 0x00000100 --board 1446801893 # New Test...
+# OEM uses non-standard offsets
+BOARD_MKBOOTIMG_ARGS := --base 0x80000000 --pagesize 2048 --kernel_offset 0x00008000 --ramdisk_offset 0x04000000 --second_offset 0x00f00000 --tags_offset 0x00000100 --board 1454406196
 # viking v12 board = 1454406196
 # viking v9 board = 1428500862
 # maven v9 board = 1429947554
@@ -48,8 +49,8 @@ BOARD_CUSTOM_BOOTIMG := true
 
 TARGET_KMODULES := true
 
-# Assert for maven
-TARGET_OTA_ASSERT_DEVICE := RCT6303W87DK
+# Assert for Viking
+TARGET_OTA_ASSERT_DEVICE := mt8127,RCT6303W87DK
 
 COMMON_GLOBAL_CFLAGS += -DDISABLE_HW_ID_MATCH_CHECK
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
@@ -99,8 +100,6 @@ TARGET_RECOVERY_FSTAB := device/mediatek/mt8127/rootdir/recovery.fstab
 BOARD_HAS_NO_SELECT_BUTTON := true
 
 # TWRP
-#RECOVERY_VARIANT := twrp
-#DEVICE_RESOLUTION := 1280X800
 TW_THEME := portrait_hdpi
 TWRP_NEW_THEME := false
 RECOVERY_SDCARD_ON_DATA := true
@@ -116,7 +115,6 @@ TW_ALWAYS_RMRF := true
 #TW_NEVER_UNMOUNT_SYSTEM := true
 TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
 #TARGET_RECOVERY_OVERSCAN_PERCENT := 18
-#TW_IGNORE_MAJOR_AXIS_0 := 300
 #RECOVERY_TOUCHSCREEN_FLIP_Y := true
 RECOVERY_TOUCHSCREEN_FLIP_X := true
 RECOVERY_TOUCHSCREEN_SWAP_XY := true
@@ -130,11 +128,6 @@ TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_MAX_BRIGHTNESS := 200
 TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone1/temp
 TW_CUSTOM_BATTERY_PATH := /sys/class/power_supply/battery
-#PRODUCT_COPY_FILES += device/mediatek/mt8127/rootdir/twrp.fstab:recovery/root/etc/twrp.fstab
-#TW_INTERNAL_STORAGE_PATH := "/emmc"
-#TW_INTERNAL_STORAGE_MOUNT_POINT := "emmc"
-#TW_EXTERNAL_STORAGE_PATH := "/storage/sdcard1"
-#TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard1"
 
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/mt_usb/musb-hdrc.0.auto/gadget/lun0/file"
 
