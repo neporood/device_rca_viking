@@ -6,3 +6,4 @@ make clean
 
 lunch cm_mt8127-eng
 
+mka bacon
