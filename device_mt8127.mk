@@ -1,5 +1,5 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_no_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
@@ -109,29 +109,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	persist.service.adb.enable=1 \
 	persist.service.debuggable=1 \
 	ro.debuggable=1
-	
-# Torch
-PRODUCT_PACKAGES += \
-    Torch
-
-# FM Radio
-PRODUCT_PACKAGES += \
-    FMRadio \
-    libfmjni \
-    libfmmt6620 \
-    libfmmt6628 \
-    libfmmt6627 \
-    libfmmt6630 \
-    libfmcust \
-    libmtkplayer
-
-# Camera
-PRODUCT_PACKAGES += \
-    Snap
-	
-# Set default player to AwesomePlayer
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.media.use-awesome=true
 
 $(call inherit-product, build/target/product/full.mk)
 
