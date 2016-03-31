@@ -21,24 +21,15 @@ This branch is for building TWRP 3.0 and hopefully soon CyanogenMod 12.1 (or CM-
 
 * Compilation
 
-        # repo init -u git://github.com/temasekMTK/android.git -b cm-12.1
+        # repo init -u git://github.com/CyanogenMod/android.git -b cm-13.0
         
         # repo sync
+
+* Bootable Recovery
+
+  Replace CM Simple Recovery with Latest TWRP (OmniRom 6.0)
+  From Here: https://github.com/omnirom/android_bootable_recovery/tree/android-6.0
         
-        # source build/envsetup.sh
+        # Drop "build_recovery" script from "scripts" folder onto terminal
         
-        # brunch cm_mt8127-userdebug
-
-# MTK
-
-Few words about mtk related binaries, services and migration peculiarities.
-
-# Limitations
-
-Services requires root:
-
-`system/core/rootdir/init.rc`
-
-  * surfaceflinger depends on sched_setscheduler calls, unable to change process priority from 'system' user (default user 'system')
-
-  * mediaserver depends on /data/nvram folder access, unable to do voice calls from 'media' user (default user 'media')
+        # Press enter
