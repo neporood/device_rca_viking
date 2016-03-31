@@ -17,9 +17,9 @@ This branch is for building TWRP 3.0 and hopefully soon CyanogenMod (or CM based
 
 * Working
 
-  TWRP 3.0 (More of Less)
+  Nothing Yet, use the 12.1 Branch
   
-* Compilation
+* Compilation for Testing Only...
 
         # repo init -u git://github.com/CyanogenMod/android.git -b cm-13.0
         
