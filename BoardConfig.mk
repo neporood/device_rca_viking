@@ -2,7 +2,7 @@
 -include vendor/mediatek/mt8127/BoardConfigVendor.mk
 
 # GPS
-TARGET_SPECIFIC_HEADER_PATH := device/mediatek/mt8127/include
+TARGET_SPECIFIC_HEADER_PATH := device/Aclo/RCT6303W87DK/include
 
 # Platform
 TARGET_BOARD_PLATFORM := mt8127
@@ -96,8 +96,6 @@ TARGET_RECOVERY_FSTAB := device/Alco/RCT6303W87DK/rootdir/recovery.fstab
 BOARD_HAS_NO_SELECT_BUTTON := true
 
 # TWRP
-#RECOVERY_VARIANT := twrp
-#DEVICE_RESOLUTION := 1280X800
 TW_THEME := portrait_hdpi
 TWRP_NEW_THEME := true
 RECOVERY_SDCARD_ON_DATA := true
@@ -112,13 +110,13 @@ TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_ALWAYS_RMRF := true
 #TW_NEVER_UNMOUNT_SYSTEM := true
 TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
-TARGET_RECOVERY_OVERSCAN_PERCENT := 19
+TARGET_RECOVERY_OVERSCAN_PERCENT := 18
 #TW_IGNORE_MAJOR_AXIS_0 := 300
 #RECOVERY_TOUCHSCREEN_FLIP_Y := true
 RECOVERY_TOUCHSCREEN_FLIP_X := true
 RECOVERY_TOUCHSCREEN_SWAP_XY := true
-TW_X_OFFSET := 95
-TW_Y_OFFSET := 20
+TW_X_OFFSET := 100
+TW_Y_OFFSET := 25
 #BOARD_HAS_FLIPPED_SCREEN := true
 TW_NO_SCREEN_TIMEOUT := true
 BOARD_HAS_LARGE_FILESYSTEM := false
@@ -127,7 +125,6 @@ TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_MAX_BRIGHTNESS := 255
 TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone1/temp
 TW_CUSTOM_BATTERY_PATH := /sys/class/power_supply/battery
-#PRODUCT_COPY_FILES += device/mediatek/mt8127/rootdir/twrp.fstab:recovery/root/etc/twrp.fstab
 #TW_INTERNAL_STORAGE_PATH := "/sdcard"
 #TW_INTERNAL_STORAGE_MOUNT_POINT := "sdcard"
 #TW_EXTERNAL_STORAGE_PATH := "/sdcard1"
