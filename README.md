@@ -21,7 +21,7 @@ This branch is for building TWRP 3.0 and hopefully soon CyanogenMod (or CM based
 
 * Compilation
 
-        # repo init -u git://github.com/CyanogenMod/android.git -b cm-13.0
+        # repo init -u git://github.com/CyanogenMod/android.git -b cm-12.1
         
         # repo sync
 
