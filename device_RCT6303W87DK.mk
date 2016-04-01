@@ -87,21 +87,35 @@ PRODUCT_COPY_FILES += \
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-    frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
-    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
-    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
-    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
-    frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-    frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-    frameworks/native/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
-    frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
-    frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
-    frameworks/native/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
-    frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
-    frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml
+	$(LOCAL_PATH)/include/permissions/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
+	$(LOCAL_PATH)/include/permissions/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
+	$(LOCAL_PATH)/include/permissions/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
+	$(LOCAL_PATH)/include/permissions/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
+	$(LOCAL_PATH)/include/permissions/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
+	$(LOCAL_PATH)/include/permissions/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
+	$(LOCAL_PATH)/include/permissions/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
+	$(LOCAL_PATH)/include/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
+	$(LOCAL_PATH)/include/permissions/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml \
+	$(LOCAL_PATH)/include/permissions/android.hardware.touchscreen.xml:system/etc/permissions/android.hardware.touchscreen.xml \
+	$(LOCAL_PATH)/include/permissions/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
+	$(LOCAL_PATH)/include/permissions/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
+	$(LOCAL_PATH)/include/permissions/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
+	$(LOCAL_PATH)/include/permissions/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+	$(LOCAL_PATH)/include/permissions/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml \
+	$(LOCAL_PATH)/include/permissions/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
+	$(LOCAL_PATH)/include/permissions/android.software.sip.xml:system/etc/permissions/android.software.sip.xml \
+	$(LOCAL_PATH)/include/permissions/android.software.webview.xml:system/etc/permissions/android.software.webview.xml \
+	$(LOCAL_PATH)/include/permissions/com.android.location.provider.xml:system/etc/permissions/com.android.location.provider.xml \
+	$(LOCAL_PATH)/include/permissions/com.android.media.remotedisplay.xml:system/etc/permissions/com.android.media.remotedisplay.xml \
+	$(LOCAL_PATH)/include/permissions/com.android.mediadrm.signer.xml:system/etc/permissions/com.android.mediadrm.signer.xml \
+	$(LOCAL_PATH)/include/permissions/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
+	$(LOCAL_PATH)/include/permissions/com.google.android.maps.xml:system/etc/permissions/com.google.android.maps.xml \
+	$(LOCAL_PATH)/include/permissions/com.google.android.media.effects.xml:system/etc/permissions/com.google.android.media.effects.xml \
+	$(LOCAL_PATH)/include/permissions/com.google.widevine.software.drm.xml:system/etc/permissions/com.google.widevine.software.drm.xml \
+	$(LOCAL_PATH)/include/permissions/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
+	$(LOCAL_PATH)/include/permissions/org.simalliance.openmobileapi.xml:system/etc/permissions/org.simalliance.openmobileapi.xml \
+	$(LOCAL_PATH)/include/permissions/platform.xml:system/etc/permissions/platform.xml \
+	$(LOCAL_PATH)/include/permissions/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
 
 # USB
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
