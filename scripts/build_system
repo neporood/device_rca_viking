@@ -4,6 +4,6 @@ make clean
 
 . build/envsetup.sh 
 
-lunch cm_mt8127-eng
+lunch cm_RCT6303W87DK-eng
 
 mka bacon
