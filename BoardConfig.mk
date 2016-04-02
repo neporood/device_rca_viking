@@ -2,7 +2,7 @@
 -include vendor/mediatek/mt8127/BoardConfigVendor.mk
 
 # GPS
-TARGET_SPECIFIC_HEADER_PATH := device/Aclo/RCT6303W87DK/include
+TARGET_SPECIFIC_HEADER_PATH := device/Alco/RCT6303W87DK/include
 
 # Platform
 TARGET_BOARD_PLATFORM := mt8127
@@ -40,7 +40,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_PREBUILT_KERNEL := device/Alco/RCT6303W87DK/kernel
 BOARD_CUSTOM_BOOTIMG_MK := device/Alco/RCT6303W87DK/bootimg.mk
 # OEM uses non-standard offsets
-BOARD_MKBOOTIMG_ARGS := --base 0x80000000 --pagesize 2048 --kernel_offset 0x00008000 --ramdisk_offset 0x04000000 --second_offset 0x00f00000 --tags_offset 0x00000100 --board 1458096252
+BOARD_MKBOOTIMG_ARGS := --base 0x80000000 --pagesize 2048 --kernel_offset 0x00008000 --ramdisk_offset 0x04000000 --second_offset 0x00f00000 --tags_offset 0x00000100 --board 1454406196
 BOARD_CUSTOM_BOOTIMG := true
 
 TARGET_KMODULES := true
@@ -125,10 +125,6 @@ TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_MAX_BRIGHTNESS := 255
 TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone1/temp
 TW_CUSTOM_BATTERY_PATH := /sys/class/power_supply/battery
-#TW_INTERNAL_STORAGE_PATH := "/sdcard"
-#TW_INTERNAL_STORAGE_MOUNT_POINT := "sdcard"
-#TW_EXTERNAL_STORAGE_PATH := "/sdcard1"
-#TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard1"
 
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/mt_usb/musb-hdrc.0.auto/gadget/lun0/file"
 
