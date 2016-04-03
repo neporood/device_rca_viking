@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-make clean
+make clobber
 
 . build/envsetup.sh 
 
