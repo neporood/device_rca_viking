@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/device_RCT6303W87DK.mk
+    $(LOCAL_DIR)/omni_viking.mk
