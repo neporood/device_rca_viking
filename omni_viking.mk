@@ -6,9 +6,9 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 $(call inherit-product-if-exists, vendor/mediatek/mt8127/mt8127-vendor.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/Alco/RCT6303W87DK/overlay
+DEVICE_PACKAGE_OVERLAYS += device/rca/viking/overlay
 
-LOCAL_PATH := device/Alco/RCT6303W87DK
+LOCAL_PATH := device/rca/viking
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
 else
